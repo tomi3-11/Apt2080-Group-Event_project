@@ -11,3 +11,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATION = False
     
     SECRET_KEY = os.environ.get("SECRET_KEY") or "my_SeCrEt_keY"
+    
+    
+class DevelopmentConfiguration(Config):
+    debug = True
