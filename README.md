@@ -1,14 +1,14 @@
 # Evenify
-Event management app
+Event management app thats allow users to view events, create events and register for events.
 
 
 # How to contribute
-# 1. Clone the repo
+# 1. Clone the repository
 ```bash
 git clone https://github.com/tomi3-11/Apt2080-Group-Event_project.git
 ```
 
-# 2. Chnage the directory
+# 2. Change the directory
 ```bash
 cd Apt2080-Group-Event_project
 ```
