@@ -2,6 +2,10 @@
 
 {% block title %}Login - Evenify{% endblock %}
 
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
 {% block content %}
 <div class="login">
     <h1>{{ title }}</h1>
