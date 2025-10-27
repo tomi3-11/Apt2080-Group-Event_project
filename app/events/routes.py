@@ -39,6 +39,7 @@ def create_event():
 
 # View event details
 @event_bp.route('/<int:event_id>')
+@login_required
 def event_detail(event_id):
     event = Event.query.get_or_404(event_id)
     attendees_count = Registration.query.filter_by(event_id=event_id).count()
