@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Evenify{% endblock %}
+
+{% block content %}
+<div class="home">
+    <h1>Welcome to <span style="color:#007bff;">Evenify</span></h1>
+    <p>A simple and elegant event management system built with Flask.</p>
+
+    {% if current_user.is_authenticated %}
+        <p>Hello, <strong>{{ current_user.username }}</strong>! 🎉</p>
+        <p><a href="{{ url_for('auth.logout') }}" class="btn">Logout</a></p>
+
+        <h2>Upcoming Events</h2>
+        {% if events %}
+            <ul class="event-list">
+                {% for event in events %}
+                    <li>
+                        <h3>{{ event.title }}</h3>
+                        <p>{{ event.description }}</p>
+                        <p><strong>Date:</strong> {{ event.date.strftime('%Y-%m-%d') }} |
+                           <strong>Time:</strong> {{ event.time.strftime('%H:%M') }}</p>
+                        <p><strong>Location:</strong> {{ event.location }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No events available at the moment. Check back later!</p>
+        {% endif %}
+
+    {% else %}
+        <div class="cta">
+            <p><a href="{{ url_for('auth.login') }}" class="btn">Login</a></p>
+            <p>or</p>
+            <p><a href="{{ url_for('auth.register') }}" class="btn">Register</a></p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

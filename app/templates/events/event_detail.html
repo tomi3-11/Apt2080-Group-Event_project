@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>{{ event.title }}</h2>
+  <p>{{ event.description }}</p>
+  <p><strong>Date:</strong> {{ event.date.strftime('%B %d, %Y') }}</p>
+  <p><strong>Time:</strong> {{ event.time.strftime('%H:%M') }}</p>
+  <p><strong>Location:</strong> {{ event.location }}</p>
+  <p><strong>Registered:</strong> {{ attendees_count }}/{{ event.max_attendees }}</p>
+
+  {% if current_user.is_authenticated %}
+    {% if is_registered %}
+      <button class="btn btn-secondary" disabled>Already Registered</button>
+    {% else %}
+      <form action="{{ url_for('event.register_event', event_id=event.event_id) }}" method="POST">
+        <button class="btn btn-primary">Register</button>
+      </form>
+    {% endif %}
+  {% else %}
+    <p><a href="{{ url_for('auth.login') }}">Login</a> to register for this event.</p>
+  {% endif %}
+</div>
+{% endblock %}
