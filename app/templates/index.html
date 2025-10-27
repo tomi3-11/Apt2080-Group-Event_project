@@ -8,19 +8,27 @@
     <p>A simple and elegant event management system built with Flask.</p>
 
     {% if current_user.is_authenticated %}
-        <p>Hello, <strong>{{ current_user.username }}</strong>! 🎉</p>
+        <p>Hello, <strong>{{ current_user.username }}</strong>!</p>
         <p><a href="{{ url_for('auth.logout') }}" class="btn">Logout</a></p>
+        <p><a href="{{ url_for('event.create_event') }}" class="btn btn-primary mb-3">Create Event</a></p>
 
         <h2>Upcoming Events</h2>
         {% if events %}
             <ul class="event-list">
                 {% for event in events %}
-                    <li>
+                    <li style="margin-bottom: 1.5em; border-bottom: 1px solid #ccc; padding-bottom: 1em;">
                         <h3>{{ event.title }}</h3>
                         <p>{{ event.description }}</p>
-                        <p><strong>Date:</strong> {{ event.date.strftime('%Y-%m-%d') }} |
-                           <strong>Time:</strong> {{ event.time.strftime('%H:%M') }}</p>
+                        <p>
+                            <strong>Date:</strong> {{ event.date.strftime('%Y-%m-%d') }} |
+                            <strong>Time:</strong> {{ event.time.strftime('%H:%M') }}
+                        </p>
                         <p><strong>Location:</strong> {{ event.location }}</p>
+
+                        <!-- ✅ Register button -->
+                        <form method="POST" action="{{ url_for('event.register_event', event_id=event.event_id) }}">
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </form>
                     </li>
                 {% endfor %}
             </ul>

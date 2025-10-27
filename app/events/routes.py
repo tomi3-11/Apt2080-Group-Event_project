@@ -3,14 +3,14 @@ from flask_login import login_required, current_user
 from datetime import datetime
 from app import db
 from app.models import Event, Registration
-from app.forms import EventForm
+from .forms import EventForm
 
-event_bp = Blueprint('event', __name__, url_prefix='/events')
+event_bp = Blueprint('event', __name__)
 
 
 # List all events
 @event_bp.route('/')
-def list_events():
+def index():
     events = Event.query.order_by(Event.date.asc()).all()
     return render_template('index.html', user=current_user, events=events, title="Home")
 
@@ -33,7 +33,7 @@ def create_event():
         db.session.add(new_event)
         db.session.commit()
         flash('Event created successfully!', 'success')
-        return redirect(url_for('event.list_events'))
+        return redirect(url_for('event.index'))
     return render_template('events/create_event.html', form=form, title="Create Event")
 
 
