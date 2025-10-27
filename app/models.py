@@ -1,10 +1,11 @@
 from werkzeug.security import check_password_hash, generate_password_hash
-from app import db
+from . import db
 from datetime import datetime
+from flask_login import UserMixin
 
 
 # User entity
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(50), nullable=False, unique=True)
@@ -29,12 +30,12 @@ class Event(db.Model):
     time = db.Column(db.Time)
     location = db.Column(db.String(150))
     max_attendees = db.Column(db.Integer)
-    created_by = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+    created_by = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 # Registreation entity
 class Registration(db.Model):
     registration_id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     event_id = db.Column(db.Integer, db.ForeignKey('event.event_id'))
     registration_date = db.Column(db.DateTime, default=datetime.utcnow)
         

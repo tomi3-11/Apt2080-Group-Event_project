@@ -8,3 +8,7 @@ Evenv/
 
 # Cache
 __pycache__/
+
+# Database
+*.sql
+*.db 
