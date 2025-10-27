@@ -2,6 +2,10 @@
 
 {% block title %}Home - Evenify{% endblock %}
 
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
 {% block content %}
 <div class="home">
     <h1>Welcome to <span style="color:#007bff;">Evenify</span></h1>
@@ -25,7 +29,6 @@
                         </p>
                         <p><strong>Location:</strong> {{ event.location }}</p>
 
-                        <!-- ✅ Register button -->
                         <form method="POST" action="{{ url_for('event.register_event', event_id=event.event_id) }}">
                             <button type="submit" class="btn btn-success">Register</button>
                         </form>
