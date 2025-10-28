@@ -13,6 +13,13 @@ body {
     color: #333;
 }
 
+body {
+    background-image: url('C:\Users\4cyru\Downloads\Apt2080-Group-Event_project\image\download.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .container {
     max-width: 700px;
     margin: 0 auto;
