@@ -10,6 +10,12 @@ login_manager = LoginManager()
 def create_app(config_class=Config):
     app = Flask(__name__)
     
+    app.config.from_mapping(
+        SECRET_KEY='dev',
+        SQLALCHEMY_DATABASE_URI='sqlite:///site.db',
+        SQLALCHEMY_TRACK_MODIFICATIONS=False
+    )
+    
     if config_class is None:
         app.config.from_object(os.environ.get("FLASK_CONFIG", "default"))
     else:

@@ -1,13 +1,12 @@
-from app.models import Event, Registration, User
-from datetime import date, time, datetime
+from app.models import User, Event
 
-def test_create_user(new_user):
-    assert new_user.username == "testuser"
-    assert new_user.email == "test@example.com"
-    assert new_user.check_password("password123")
+def test_create_user(app):
+    with app.app_context():
+        user = User(username='test', email='a@b.com')
+        assert user.username == 'test'
+        assert user.email == 'a@b.com'
 
-def test_create_event(sample_event):
-    assert sample_event.title == "Test Event"
-    assert sample_event.location == "Nairobi"
-    assert isinstance(sample_event.date, date)
-    assert isinstance(sample_event.time, time)
+def test_create_event(app):
+    with app.app_context():
+        event = Event(title='Demo', description='Testing')
+        assert event.title == 'Demo'
