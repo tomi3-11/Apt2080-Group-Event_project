@@ -14,7 +14,8 @@ body {
 }
 
 body {
-    background-image: url('C:\Users\4cyru\Downloads\Apt2080-Group-Event_project\image\download.jpg');
+    background-image: url('background-image: url('../image/download.jpg');
+');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
