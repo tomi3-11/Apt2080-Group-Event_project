@@ -1,6 +1,20 @@
 # Evenify
 Event management app thats allow users to view events, create events and register for events.
 
+here are the Group members
+
+| Full Name | Student ID | GitHub Username |
+|------------|------------|-----------------|
+| Thomas Wotoro | 674609 | tomi3-11 |
+| Rayan Nur  | 671479 | rayanmohamed7 |
+| Precious Zawadi | 673738 | crispl3afy |
+| Rose Maina | 671834 | Sige001 |
+| Winnie Kihaya | 666067 | winnie-ms |
+| Kate Maina | 672929 | igenuinelyliketocode |
+| Cyrus Mwangi | 674001 | 4cyr |
+| Mohamud abdi | 671877 | lamahelanpoi |
+
+
 
 # How to contribute
 # 1. Clone the repository
