@@ -7,19 +7,15 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
     min-height: 100vh;
     padding: 20px;
     color: #333;
-}
-
-body {
-    background-image: url('background-image: url('../image/download.jpg');
-');
+    background-image: url('../image/download.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+} 
+
 
 .container {
     max-width: 700px;
