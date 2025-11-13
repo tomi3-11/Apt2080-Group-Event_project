@@ -161,9 +161,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Author
 
-**Thomas Jose (tomi3-11)**
-Flask Developer | Software Engineering Student
-[Contact via GitHub Profile](https://github.com/tomi3-11)
+**Thomas Jose (tomi3-11)** <br>
+Flask Developer | Software Engineering Student <br>
+[Contact via GitHub Profile](https://github.com/tomi3-11) <br>
 
 
 
